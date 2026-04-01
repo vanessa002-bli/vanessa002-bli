@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Borboleta Store</title>
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            background-color: #87CEEB; /* azul céu */
+        }
+
+        .container {
+            margin-top: 50px;
+        }
+
+        h1 {
+            color: #ffffff;
+        }
+
+        input {
+            padding: 8px;
+            margin: 5px;
+            width: 200px;
+            border: 1px solid #5bbce4;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #5bbce4;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #3aaed8;
+        }
+
+        #produtos {
+            display: none;
+            margin-top: 30px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            background-color: #bfe9ff;
+            margin: 5px auto;
+            padding: 10px;
+            width: 250px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>🦋 Borboleta Store</h1>
+
+    <div id="formulario">
+        <h2>Cadastro</h2>
+
+        <input type="text" id="nome" placeholder="Nome"><br>
+        <input type="number" id="idade" placeholder="Idade"><br>
+        <input type="text" id="endereco" placeholder="Endereço"><br>
+
+        <button onclick="confirmar()">Confirmar</button>
+    </div>
+
+    <div id="produtos">
+        <h2 id="boasVindas"></h2>
+
+        <h3>Itens disponíveis:</h3>
+        <ul>
+            <li>Camiseta Estilo Livre</li>
+            <li>Vestido Elegance</li>
+            <li>Tênis Street</li>
+            <li>Bolsa Lifestyle</li>
+        </ul>
+    </div>
+</div>
+
+<script>
+    function confirmar() {
+        let nome = document.getElementById("nome").value;
+        let idade = document.getElementById("idade").value;
+        let endereco = document.getElementById("endereco").value;
+
+        if(nome === "" || idade === "" || endereco === "") {
+            alert("Preencha todos os campos!");
+            return;
+        }
+
+        document.getElementById("formulario").style.display = "none";
+        document.getElementById("produtos").style.display = "block";
+
+        document.getElementById("boasVindas").innerText =
+            "Bem-vindo(a), " + nome + "!";
+    }
+</script>
+
+</body>
+</html>
